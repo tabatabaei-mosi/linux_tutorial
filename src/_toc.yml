@@ -1,0 +1,11 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: 01. Introduction/intro
+options:
+  numbered: true
+parts:
+  - caption: Crash Course
+    chapters:
+      - file: 01. Crash Course/01. Fundamentals
