@@ -1,0 +1,858 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Fundamentals &#8212; Linux Tutorial</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Python Progragramming Course" href="../01.%20Introduction/intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/pytopia.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Linux Tutorial</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../01.%20Introduction/intro.html">
+                    Python Progragramming Course
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Crash Course
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Fundamentals
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://tabatabaei-mosi.github.io/linux_tutorial/"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://tabatabaei-mosi.github.io/linux_tutorial//issues/new?title=Issue%20on%20page%20%2F02. Crash Course/01. Fundamentals.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/tabatabaei-mosi.github.io/linux_tutorial/edit/master/docs/02. Crash Course/01. Fundamentals.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/02. Crash Course/01. Fundamentals.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-linux">
+   What is Linux?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-use-linux">
+   Why use Linux?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-a-distribution">
+   What is a “distribution?”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#which-distribution-is-right-for-you">
+   Which distribution is right for you?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-software-on-linux">
+   Installing software on Linux
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#windows-subsystem-for-linux-wsl">
+   Windows Subsystem for Linux (WSL)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#directories">
+   Directories
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#common-directories">
+     Common Directories
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linux-commands">
+   Linux Commands
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-basic-linux-commands">
+     Some Basic Linux Commands
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Fundamentals</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-linux">
+   What is Linux?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-use-linux">
+   Why use Linux?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-a-distribution">
+   What is a “distribution?”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#which-distribution-is-right-for-you">
+   Which distribution is right for you?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-software-on-linux">
+   Installing software on Linux
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#windows-subsystem-for-linux-wsl">
+   Windows Subsystem for Linux (WSL)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#directories">
+   Directories
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#common-directories">
+     Common Directories
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linux-commands">
+   Linux Commands
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-basic-linux-commands">
+     Some Basic Linux Commands
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="fundamentals">
+<h1>Fundamentals<a class="headerlink" href="#fundamentals" title="Permalink to this headline">#</a></h1>
+<section id="table-of-contents">
+<h2><a class="reference internal" href="../_images/toc.png"><img alt="../_images/toc.png" src="../_images/toc.png" style="width: 20px;" /></a> Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="#fundamentals">Fundamentals</a></p>
+<ul>
+<li><p><a class="reference external" href="#-table-of-contents"> Table of Contents</a></p></li>
+<li><p><a class="reference external" href="#what-is-linux">What is Linux?</a></p></li>
+<li><p><a class="reference external" href="#why-use-linux">Why use Linux?</a></p></li>
+<li><p><a class="reference external" href="#what-is-a-distribution">What is a “distribution?”</a></p></li>
+<li><p><a class="reference external" href="#which-distribution-is-right-for-you">Which distribution is right for you?</a></p></li>
+<li><p><a class="reference external" href="#installing-software-on-linux">Installing software on Linux</a></p></li>
+<li><p><a class="reference external" href="#windows-subsystem-for-linux-wsl">Windows Subsystem for Linux (WSL)</a></p></li>
+<li><p><a class="reference external" href="#directories">Directories</a></p>
+<ul>
+<li><p><a class="reference external" href="#common-directories">Common Directories</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#linux-commands">Linux Commands</a></p>
+<ul>
+<li><p><a class="reference external" href="#some-basic-linux-commands">Some Basic Linux Commands</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#references">References</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="what-is-linux">
+<h2>What is Linux?<a class="headerlink" href="#what-is-linux" title="Permalink to this headline">#</a></h2>
+<p>Just like Windows, iOS, and Mac OS, Linux is an operating system. In fact, one of the most popular platforms on the planet, Android, is powered by the Linux operating system. An operating system is software that manages all of the hardware resources associated with your desktop or laptop. To put it simply, the operating system manages the communication between your software and your hardware. Without the operating system (OS), the software wouldn’t function.</p>
+<p>The Linux operating system comprises several different pieces:</p>
+<ol class="simple">
+<li><p><strong>Bootloader</strong> –  The software that manages the boot process of your computer. For most users, this will simply be a splash screen that pops up and eventually goes away to boot into the operating system.</p></li>
+<li><p><strong>Kernel</strong> – This is the one piece of the whole that is actually called <code class="docutils literal notranslate"><span class="pre">Linux</span></code>. The kernel is the core of the system and manages the CPU, memory, and peripheral devices. The kernel is the lowest level of the OS.</p></li>
+<li><p><strong>Init system</strong> – This is a sub-system that bootstraps the user space and is charged with controlling daemons. One of the most widely used init systems is systemd? which also happens to be one of the most controversial. It is the init system that manages the boot process, once the initial booting is handed over from the bootloader (i.e., GRUB or GRand Unified Bootloader).</p></li>
+<li><p><strong>Daemons</strong> – These are background services (printing, sound, scheduling, etc.) that either start up during boot or after you log into the desktop.</p></li>
+<li><p><strong>Graphical server</strong> – This is the sub-system that displays the graphics on your monitor. It is commonly referred to as the X server or just X.</p></li>
+<li><p><strong>Desktop environment</strong> – This is the piece that the users actually interact with. There are many desktop environments to choose from (GNOME, Cinnamon,
+Mate, Pantheon, Enlightenment, KDE, Xfce, etc.). Each desktop environment includes built-in applications (such as file managers, configuration tools, web browsers, and games).</p></li>
+<li><p><strong>Applications</strong> – Desktop environments do not offer the full array of apps. Just like Windows and macOS, Linux offers thousands upon thousands of high-quality software titles that can be easily found and installed. Most modern Linux distributions (more on this below) include App Store-like tools that centralize and simplify application installation. For example, Ubuntu Linux has the Ubuntu Software Center (a rebrand of GNOME Software? Figure 1) which allows you to quickly search among the thousands of apps and install them from one centralized location.</p></li>
+</ol>
+</section>
+<section id="why-use-linux">
+<h2>Why use Linux?<a class="headerlink" href="#why-use-linux" title="Permalink to this headline">#</a></h2>
+<p>One of the biggest reasons for someone to switch to Linux is to use what is arguably the most powerful feature of the Linux operating system and that is the <code class="docutils literal notranslate"><span class="pre">terminal</span></code>. If you’ve ever seen a film where a hacker or a computer genius has sat behind their computer typing commands into what looks like a big black box on their computer screen that black box is called the <strong>terminal</strong>.</p>
+<p>Now Linux is unique in that the development of Linux is inseparable from the terminal and this means that knowing how to use the terminal gives you pretty much absolute control over how your computer works by using the terminal. You can do pretty much anything that you want with your Linux computer. Now you can’t get this level of control over your computer in any other operating system and this makes the terminal an incredible skill to learn.</p>
+<p>Another important reason to switch and use Linux is that Linux is free and therefore most of world’s servers run on Linux. This means that if you want to learn how to program or develop web applications or develop software in general, you’re going to need to learn how to use Linux.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Don’t worry about memorizing all the commands.</p>
+</div>
+</section>
+<section id="what-is-a-distribution">
+<h2>What is a “distribution?”<a class="headerlink" href="#what-is-a-distribution" title="Permalink to this headline">#</a></h2>
+<p>Linux has a number of different versions to suit any type of user. From new users to hard-core users, you’ll find a <code class="docutils literal notranslate"><span class="pre">flavor</span></code> of Linux to match your needs. These versions are called distributions (or, in the short form, “distros”). Nearly every distribution of Linux can be downloaded for free, burned onto disk (or USB thumb drive), and installed (on as many machines as you like).</p>
+<p>Popular Linux distributions include:</p>
+<ul class="simple">
+<li><p>LINUX MINT</p></li>
+<li><p>MANJARO</p></li>
+<li><p>DEBIAN</p></li>
+<li><p>UBUNTU</p></li>
+<li><p>ANTERGOS</p></li>
+<li><p>SOLUS</p></li>
+<li><p>FEDORA</p></li>
+<li><p>ELEMENTARY OS</p></li>
+<li><p>OPENSUSE</p></li>
+</ul>
+<p>Each distribution has a different take on the desktop. Some opt for very modern user interfaces (such as GNOME and Elementary OS’s Pantheon), whereas others stick with a more traditional desktop environment (openSUSE uses KDE). You can check out the top 100 distributions on the <a class="reference external" href="https://distrowatch.com/">Distrowatch</a>.</p>
+<p>And don’t think the server has been left behind. For this arena, you can turn to:</p>
+<ul class="simple">
+<li><p>Red Hat Enterprise Linux</p></li>
+<li><p>Ubuntu Server</p></li>
+<li><p>CentOS</p></li>
+<li><p>SUSE Enterprise Linux</p></li>
+</ul>
+<p>Some of the above server distributions are free (such as Ubuntu Server and CentOS) and some have an associated price (such as Red Hat Enterprise Linux and SUSE Enterprise Linux). Those with an associated price also include support.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In general, the more popular a distribution is, the more support you’ll find for it. This is especially true for server distributions. Among various distributions, it’s recommended to use <code class="docutils literal notranslate"><span class="pre">Ubuntu</span></code> for beginners.</p>
+</div>
+</section>
+<section id="which-distribution-is-right-for-you">
+<h2>Which distribution is right for you?<a class="headerlink" href="#which-distribution-is-right-for-you" title="Permalink to this headline">#</a></h2>
+<p>Which distribution you use will depend on the answer to three simple questions:</p>
+<ul class="simple">
+<li><p>How skilled of a computer user are you?</p></li>
+<li><p>Do you prefer a modern or a standard desktop interface?</p></li>
+<li><p>Server or desktop?</p></li>
+</ul>
+<p>If your computer skills are fairly basic, you’ll want to stick with a newbie-friendly distribution such as <code class="docutils literal notranslate"><span class="pre">Linux</span> <span class="pre">Mint</span></code>, <code class="docutils literal notranslate"><span class="pre">Ubuntu</span></code>, <code class="docutils literal notranslate"><span class="pre">Elementary</span> <span class="pre">OS</span></code> or <code class="docutils literal notranslate"><span class="pre">Deepin</span></code>. If your skill set extends into the above-average range, you could go with a distribution like <code class="docutils literal notranslate"><span class="pre">Debian</span></code> or <code class="docutils literal notranslate"><span class="pre">Fedora</span></code>. If, however, you’ve pretty much mastered the craft of computer and system administration, use a distribution like <code class="docutils literal notranslate"><span class="pre">Gentoo</span></code>. If you really want a challenge, you can build your very own Linux distribution, with the help of Linux From Scratch.</p>
+<p>If you’re looking for a server-only distribution, you will also want to decide if you need a desktop interface, or if you want to do this via command-line only. The <code class="docutils literal notranslate"><span class="pre">Ubuntu</span> <span class="pre">Server</span></code> does not install a GUI interface. This means two things: your server won’t be bogged down loading graphics and you’ll need to have a solid understanding of the Linux command line. However, you can install a GUI package on top of the <code class="docutils literal notranslate"><span class="pre">Ubuntu</span> <span class="pre">Server</span></code> with a single command like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install ubuntu-desktop
+</pre></div>
+</div>
+<p>System administrators will also want to view a distribution with regards to features. Do you want a server-specific distribution that will offer you, out of the box, everything you need for your server? If so, <code class="docutils literal notranslate"><span class="pre">CentOS</span></code> might be the best choice. Or, do you want to take a desktop distribution and add the pieces as you need them? If so, <code class="docutils literal notranslate"><span class="pre">Debian</span></code> or <code class="docutils literal notranslate"><span class="pre">Ubuntu</span> <span class="pre">Linux</span></code> might serve you well.</p>
+</section>
+<section id="installing-software-on-linux">
+<h2>Installing software on Linux<a class="headerlink" href="#installing-software-on-linux" title="Permalink to this headline">#</a></h2>
+<p>Just as the operating system itself is easy to install, so too are applications. Most modern Linux distributions include what most would consider an app store. This is a centralized location where software can be searched and installed. Ubuntu Linux (and many other distributions) rely on GNOME Software, Elementary OS has the AppCenter, Deepin has the Deepin Software Center, openSUSE has their AppStore, and some distributions rely on Synaptic.</p>
+<p>Regardless of the name, each of these tools do the same thing: a central place to search for and install Linux software. Of course, these pieces of software depend upon the presence of a GUI. For GUI-less servers, you will have to depend upon the command-line interface for installation.</p>
+<p>Let’s look at two different tools to illustrate how easy even the command line installation can be. Our examples are for Debian-based distributions and Fedora-based distributions. The Debian-based distros will use the apt-get tool for installing software and Fedora-based distros will require the use of the yum tool. Both work very similarly. We’ll illustrate using the apt-get command. Let’s say you want to install the wget tool (which is a handy tool used to download files from the command line). To install this using apt-get, the command would like like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install wget
+</pre></div>
+</div>
+<p>The sudo command is added because you need super user privileges in order to install software. Similarly, to install the same software on a Fedora-based distribution, you would first su to the super user (literally issue the command su and enter the root password), and issue this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>yum install wget
+</pre></div>
+</div>
+<p>That’s all there is to installing software on a Linux machine. It’s not nearly as challenging as you might think. Still in doubt? Recall the Easy Lamp Server Installation from earlier. With a single command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo taskel
+</pre></div>
+</div>
+<p>You can install a complete LAMP (Linux Apache MySQL PHP) server on either a server or desktop distribution. It really is that easy.</p>
+</section>
+<section id="windows-subsystem-for-linux-wsl">
+<h2>Windows Subsystem for Linux (WSL)<a class="headerlink" href="#windows-subsystem-for-linux-wsl" title="Permalink to this headline">#</a></h2>
+<p>The Windows Subsystem for Linux (WSL) is a new Windows 10 feature that enables you to run native Linux command-line tools directly on Windows, alongside your traditional Windows desktop and modern store apps.</p>
+<p>The Windows Subsystem for Linux lets developers run a GNU/Linux environment – including most command-line tools, utilities, and applications – directly on Windows, unmodified, without the overhead of a traditional virtual machine or dualboot setup.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also access your local machine’s filesystem from within the Linux Bash shell – you’ll find your local drives mounted under the <code class="docutils literal notranslate"><span class="pre">/mnt</span></code> folder. For example, your C: drive is mounted under <code class="docutils literal notranslate"><span class="pre">/mnt/c</span></code>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you are using WSL and want to customize it:</p>
+<ol class="simple">
+<li><p>Right click in the top title bar of the terminal window (this is the likely gray part of the window with an orange circle on the left).</p></li>
+<li><p>From the menu that appears upon right click, select properties.</p></li>
+<li><p>Select Font, and choose the size you’d like (I prefer size 20 for my WSL windows)</p></li>
+<li><p>Then select OK (once OK is clicked the windows and the window text should resize to the selected font size).</p></li>
+</ol>
+<p><strong>Recommended changes</strong>:</p>
+<ul class="simple">
+<li><p>In Options tab:</p>
+<ul>
+<li><p>Check <code class="docutils literal notranslate"><span class="pre">Use</span> <span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">C/V</span> <span class="pre">as</span> <span class="pre">Copy/Pase</span></code></p></li>
+</ul>
+</li>
+<li><p>In Font tab:</p>
+<ul>
+<li><p>Font size: 36</p></li>
+</ul>
+</li>
+<li><p>In Layout tab:</p>
+<ul>
+<li><p>Width: 80</p></li>
+<li><p>Height: 18</p></li>
+</ul>
+</li>
+<li><p>In Terminal tab:</p>
+<ul>
+<li><p>Check <code class="docutils literal notranslate"><span class="pre">Disable</span> <span class="pre">Scroll-Forward</span></code></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="directories">
+<h2>Directories<a class="headerlink" href="#directories" title="Permalink to this headline">#</a></h2>
+<p>Each operating system has its own design of organizing files and directories. In Linux, the <em><code class="docutils literal notranslate"><span class="pre">root</span></code></em> directory is denoted by a forward slash (<code class="docutils literal notranslate"><span class="pre">/</span></code>). The <code class="docutils literal notranslate"><span class="pre">root</span></code> directory is the top-most directory in the file system. It is the parent of all other directories. The root directory is also known as the root folder. The root directory is the first directory that is created when a Linux system is installed. It is also the first directory that is displayed when you open a file manager.</p>
+<figure class="align-default" id="linux-directory">
+<a class="reference internal image-reference" href="../_images/linux_directory_structure.png"><img alt="../_images/linux_directory_structure.png" src="../_images/linux_directory_structure.png" style="width: 475.0px; height: 225.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">The Linux directory structure</span><a class="headerlink" href="#linux-directory" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="common-directories">
+<h3>Common Directories<a class="headerlink" href="#common-directories" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code>: root</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">/bin</span></code>: binary or other executalbe programs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/etc</span></code>: system configuration files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/home</span></code>: home directories</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">user_name</span></code></p>
+<ul>
+<li><p>Documents</p></li>
+<li><p>Downloads</p></li>
+<li><p>Music</p></li>
+<li><p>…</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/opt</span></code>: optional or third party softwares</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/tmp</span></code>: temporary space, typically cleared on reboot</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/usr</span></code>: user related programs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/var</span></code>: variable data, most notably log files</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">log</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/boot</span></code>: files needed to boot the operating system</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/cdrom</span></code>: mount point for CD-ROMs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/dev</span></code>: device files, typically controlled by the operating system and the system administrators.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/lib</span></code>: system libraries</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/lib64</span></code>: system libraries, 64 bit</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/lost+found</span></code>: Used by the file system to store recovered files after a file system check has been performed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/media</span></code>: Used to mount removable media like CD-ROMs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/mnt</span></code>: used to mount external file systems.</p></li>
+</ul>
+</li>
+</ul>
+<p>You don’t have to memorize all of these directories. We will be covering some of them in more detail in this course. For now, just remember that the root directory is <code class="docutils literal notranslate"><span class="pre">/</span></code> and that there is a  <code class="docutils literal notranslate"><span class="pre">home</span></code> directory that creates a directory for each user (<code class="docutils literal notranslate"><span class="pre">/home/username</span></code>). The <code class="docutils literal notranslate"><span class="pre">/home</span></code> directory contains all the user profiles. The Documents, Downloads, Music, and other directories are all subdirectories of the user’s profile.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">tree</span></code> command to display the directory structure of the current directory. The <code class="docutils literal notranslate"><span class="pre">tree</span></code> command is not installed by default. You can install it using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install tree
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">/bin</span></code> is the directory where all the executable files are stored. By running the following command, you can see the location of the Python executable file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which python
+</pre></div>
+</div>
+<p>The result is something like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/home/username/anaconda3/envs/py37/bin/python
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">pwd</span></code> command is an built-in commond which is stored in the <code class="docutils literal notranslate"><span class="pre">/bin</span></code> directory.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> directory is used to store temporary files. You can download or install software in this directory and when your system restarts, all the files in this directory will be deleted.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">/cdrom</span></code> directory is the mount point for CD-ROMs. The <code class="docutils literal notranslate"><span class="pre">/mnt</span></code> directory is used to mount external file systems. For example, you can mount a USB drive to this directory. Mounting a USB drive to the <code class="docutils literal notranslate"><span class="pre">/mnt</span></code> directory will make the USB drive available at <code class="docutils literal notranslate"><span class="pre">/mnt/usbdrive</span></code>.</p>
+</section>
+</section>
+<section id="linux-commands">
+<h2>Linux Commands<a class="headerlink" href="#linux-commands" title="Permalink to this headline">#</a></h2>
+<p>The terminal is nothing more than just a window into the shell. You can’t really type commands anywhere unless you’ve opened a terminal. What you’re doing is you’re typing commands in the terminal and you press enter and then they are submitted to the shell.</p>
+<p>And there are actually different types of shells so different types of shelves just like there were different types of human languages can actually interpret the same command in different ways, but fortunately there is one type of shell which has been which is the most common type which is called the bash shell. So if you’ve ever heard the term bash shell scripting or bash scripting or something like that it means writing programs and writing scripts that can be read by the bash shell and Linux.</p>
+<p>Most Linux distribution use the bash shell and ubuntu definitely does by default. So that’s something to bear in mind that there are different types of shells on Linux. They can interpret commands in different ways but the most common one is the bash shell.</p>
+<section id="some-basic-linux-commands">
+<h3>Some Basic Linux Commands<a class="headerlink" href="#some-basic-linux-commands" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Print “Hello World”: <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">Hello</span> <span class="pre">World</span></code></p></li>
+<li><p>Calendar: <code class="docutils literal notranslate"><span class="pre">cal</span></code>, <code class="docutils literal notranslate"><span class="pre">cal</span> <span class="pre">2021</span></code>, <code class="docutils literal notranslate"><span class="pre">cal</span> <span class="pre">-y</span></code></p></li>
+<li><p>Today date: <code class="docutils literal notranslate"><span class="pre">date</span></code></p></li>
+<li><p>Clear Screen: <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">L</span></code></p></li>
+</ul>
+<p>You can keep pressing up and cycling backwards through the commands that you’ve already run which is very very useful.</p>
+<p>You can also look at your whole command history using what’s called the history command, so if you type <code class="docutils literal notranslate"><span class="pre">history</span></code> and press ENTER we can see all of our previous commands with the line number associated with them.</p>
+<p>To run a line number in history again, instead of having to cycle all the way back up to number 1, what I could do is look a tide the exclamation mark and then 1. For example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">!1</span></code>: Running the first command in history.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!275</span></code>: Runnign the 275th command in history.</p></li>
+</ul>
+<p>To run the most recent command: <code class="docutils literal notranslate"><span class="pre">!!</span></code>
+To exit the terminal: <code class="docutils literal notranslate"><span class="pre">exit</span></code></p>
+<p>Some more commands to look at:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code>: <code class="docutils literal notranslate"><span class="pre">-rw-rw-r--</span> <span class="pre">1</span> <span class="pre">jason</span> <span class="pre">users</span> <span class="pre">10400</span> <span class="pre">Sep</span> <span class="pre">27</span> <span class="pre">08:52</span> <span class="pre">sales.data</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">-rw-rw-r--</span></code>: permissions</p></li>
+<li><p>1: number of links</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jason</span></code>: owner name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">users</span></code>: group name</p></li>
+<li><p>10400: number of bytes in the file</p></li>
+<li><p>Sep 27 08:52: last modification time</p></li>
+<li><p>sales.data: file name</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code>: listing all files including hidden files</p>
+<ul>
+<li><p>hiden files begin with a period (<code class="docutils literal notranslate"><span class="pre">.git</span></code> for example)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span></code>: listing files by type</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code>: Directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;</span></code>: Link</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code>: Executable</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-t</span></code>: list files by time</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-r</span></code>: reverse order</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span> <span class="pre">-a</span></code> or <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-la</span></code> or <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-al</span></code>: combine options</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tree</span></code>: similar to <code class="docutils literal notranslate"><span class="pre">ls</span></code>, but creates visual output</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">tree</span> <span class="pre">-d</span></code>: list directories only</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cat</span></code>: concatenates and displays files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">echo</span></code>: displays arguments to the screen</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">man</span></code>: displays the online manual</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">-k</span> <span class="pre">SEARCH_TERM</span></code>: searching man pages</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exit</span></code>: exits the shell or your current session</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clear</span></code>: clears the screen</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reset</span></code>: resets the shell or your current session</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">which</span></code>: locate a command</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">groups</span></code>: displays a user’s groups</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Memorizing commands is not important. What commands actually are and how they are structured is important to understand so that you can start to see a pattern behind everything you can start to look at the commands as a type of language rather than just random text on the screen that you’ve got to memorize.</p>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Course Material</p>
+<ul>
+<li><p><a class="reference external" href="https://www.linux.com/what-is-linux/#:~:text=Just%20like%20Windows%2C%20iOS%2C%20and,by%20the%20Linux%20operating%20system.">Linux.com</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./02. Crash Course"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../01.%20Introduction/intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Python Progragramming Course</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Pytopia community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
